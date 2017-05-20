@@ -1,0 +1,76 @@
+  <!--
+<section>  
+  <article>
+    <h3>      Interpolation / Interpolação     </h3>
+    <p>Interpolação {{url}}</p>
+    <p>Resultado de 1 + 1 = {{ 1 + 1}}</p>
+    <p>Resultado de 1 + 1 não é = {{ 1 + 1 + getValor() }}</p>
+    <p>curtir {{cursoAngular && getCurtirCurso}}</p>
+  </article>
+  <article>
+    <h3>Property Binding</h3>
+    <img src="{{urlmagem}}">
+    <img [src]="urlmagem">
+    <img bind-src="urlmagem">
+  </article>
+  </section>
+-->
+
+
+<!--
+<section class="property-binding">
+
+  <article>
+    <h3>Class e Style binding</h3>
+    <div>
+      Selecione um Classe
+      <select #minhaClasse (change)="0">
+    <option value="alert-success">Sucesso</option>
+    <option value="alert-info">Info</option>
+    <option value="alert-warning">Alerta</option>
+    <option value="alert-danger">Error</option>
+  </select>
+      <br/><br/>
+
+<div class="alert {{minhaClasse.value}}">  Alert do ComboBox </div>
+
+      <div class="alert" role="alert" [class.alert-success]="minhaClasse.value == 'alert-success'">Sucesso</div>
+      <div class="alert" role="alert" [class.alert-info]="minhaClasse.value == 'alert-info'">Info</div>
+      <div class="alert" role="alert" [class.alert-warning]="minhaClasse.value == 'alert-warning'">Alert</div>
+      <div class="alert" role="alert" [class.alert-danger]="minhaClasse.value == 'alert-danger'">Error</div>
+    
+    <div class="alert alert-danger" role="alert" [style.display]="minhaClasse.value == 'alert-danger' ? 'block' : 'none'">
+      Texto de Error
+    </div>
+    
+    </div>
+  </article>
+
+</section>
+-->
+
+<section class="event-binding">
+  <article>
+    <h3>Event Binding</h3>
+  </article>
+  
+  <button (click)="botaoClicado()" class="btn btn-primary">Me Clique</button>
+  
+  <br/><br/>
+  <input type="text"
+   (keyup)="onKeyUp($event)"
+   (keyup.enter)="salvarValor(campoInput.value)"
+   (blur)="salvarValor($event.target.value)"
+   #campoInput
+   >
+
+<p>{{valorAtual}}</p>
+<p>{{valorSalvo}}</p>
+
+<br>
+
+<span (mouseover)="onMouseOut()"
+      (mouseout)="onMouseOut()"
+      [class.hightlight]="isMouseOver"
+      >Passe o mouse aqui</span>
+</section>
